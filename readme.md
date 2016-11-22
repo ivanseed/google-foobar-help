@@ -9,7 +9,11 @@ Foobar is a web-app that posts a series of challenges which you have a set time 
 ## How do I get in?
 The prompt to participate in the challenges normally appears when searching for information related to programming languages Google are interested in targeting applicants for. One search that is effective is `python try catch`, just refresh the page if you do not see the prompt and make sure you give it a couple seconds to load the whole page before you refresh. You will see something like this:
 
-[FooBar Challenge Prompt](./assets/foobarprompt.png "FooBar Challenge Prompt")
+![FooBar Challenge Prompt](./assets/foobarprompt.png "FooBar Challenge Prompt")
 
 ## Challenges
 Here are some challenges that I came across as well as an explanation on how I set out to complete some of them. Please note that these challenges can be completed in several different ways and that my way is no means the 'correct way', but simply one method of passing the test cases. Feel free to contribute to this list with a PR.
+
+* [bomb_baby]()
+* [doomsday_fuel]()
+* [queue_to_do]()
