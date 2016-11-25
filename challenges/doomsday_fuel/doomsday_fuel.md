@@ -77,7 +77,7 @@ What would be ideal would be just have to chances of reaching terminal nodes and
 Well there is a way, and the way I used was a [Markov Absorbing Chain method which is a Markov chain in which _every_ state will eventually reach an absorbing state.](https://en.wikipedia.org/wiki/Absorbing_Markov_chain)
 
 ### A Solution
-[Here is a good video explaining Absorbing Markov Chains.](https://www.youtube.com/watch?v=bTeKu7WdbT8)
+[Here is a good video explaining Absorbing Markov Chains.](https://www.youtube.com/watch?v=bTeKu7WdbT8) I highly recommend you watch ep 7-9 and you will _fly by_ with this challenge.
 
 I will not go into detail about how Markov chains work as there are plenty of other online sources out there that would do a lot better than what I could do. But let us go through applying the algorithm to the example above which will give you a good insight on how you could maybe apply the same algorithm to your Java or Python solution.
 
@@ -87,6 +87,8 @@ First let us order the matrix so we get a better idea of what we are working wit
 
 You can see that I have added a 100% chance that the __terminal states will transform into itself in the next evolution__.
 
+You may have noticed that we now have an Identity Matrix and a Zero matrix, and left with two sub matrix - one represents the probabilities of a non-terminal -> terminal and for a non-terminal -> non-terminal.
+
 ![Matrix Two](./assets/mat2.png "Matrix Two")
 
 * `I` - Identity Matrix
@@ -94,7 +96,7 @@ You can see that I have added a 100% chance that the __terminal states will tran
 * `R` - Sub Matrix
 * `Q` - Sub Matrix
 
-We want to approach a limiting matrix which will give us the answers we are looking for, to do this we need to calculate `FR` and `F = (I-Q)^-1` which will leave us with this matrix, and `FR` will contain the probabilities we need.
+We want to approach a limiting matrix which will give us the answers we are looking for, to do this we need to calculate `FR` and `F = (I-Q)^-1` which will leave us with this matrix, and `FR` will contain the probabilities we need. (Basically we want to get rid of this non-terminal -> non-terminal matrix so we can get the probabilities of only non-terminal -> terminal)
 
 ![Matrix Three](./assets/mat3.png "Matrix Three")
 
@@ -103,11 +105,13 @@ Let us calculate `F = (I-Q)^-1` =
 
 ![Calc One](./assets/calc1.png "Calc One")
 
+(Remember to get F we need to inverse the result of I-Q)
+
 Finally `FR` =
 
 ![Calc Two](./assets/calc2.png "Calc Two")
 
-You can see in the first row of `FR` we find the probabilities of reaching terminal states in the order we rearranged earlier. You can then find your own way to find the common denominator and return the array `[0, 3, 2, 9, 14]`. You can verify you have done this correctly easily as the first row will always equal 1.
+You can see in the first row of `FR` we find the probabilities of reaching terminal states which nicely matches the order of the matrix we made, which the terminal states are at the top. You can then find your own way to find the common denominator and return the array `[0, 3, 2, 9, 14]`. You can verify you have done this correctly easily as the first row will always equal to 1.
 
 ### Summary
 
@@ -131,4 +135,6 @@ Some tips:
 
 * Store everything as fractions, and always simplify when possible - worry about optimizing later if you really care.
 
-* Again; [patrickJMT's video series on Markov Chains is super useful and I advise that you watch episodes 7-9](https://www.youtube.com/watch?v=bTeKu7WdbT8)
+* Again; [patrickJMT's video series on Markov Chains is great and I advise that you watch episodes 7-9](https://www.youtube.com/watch?v=bTeKu7WdbT8)
+
+In conclusion I am unsure of any other methods on how to complete this challenge, and I leave it to you on how you will go about implementing this. This method works fairly well and you shouldn't worry to much about optimization as you will be working with a maximum of 10 by 10 matrices. I wish you the best of luck if you get this challenge and I hope this helped.
