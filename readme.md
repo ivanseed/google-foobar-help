@@ -14,6 +14,6 @@ The prompt to participate in the challenges normally appears when searching for 
 ## Challenges
 Here are some challenges that I came across as well as an explanation on how I set out to complete some of them. Please note that these challenges can be completed in several different ways and that my way is no means the 'correct way', but simply one method of passing the test cases. Feel free to contribute to this list with a PR.
 
-* [bomb_baby]()
+* [bomb_baby](./challenges/bomb_baby/bomb_baby.md))
 * [doomsday_fuel](./challenges/doomsday_fuel/doomsday_fuel.md)
 * [queue_to_do]()
