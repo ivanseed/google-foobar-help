@@ -67,15 +67,15 @@ Green nodes represent normal tiles, red tiles represent walls which are not pass
 
 First of all let us calculate all the weights from node `A` to all other nodes, even the nodes that represent walls and this will get us the shortest distance it takes us to get to every other node.
 
-__Once you find the weight to `Q` (the exit) you can stop calculating nodes that have weight that is equal or greater as there is no way they will have a solution to the shortest path, you need to avoid the cost of walls though somehow.__
+__Once you find the weight to `Q` (the exit) you can stop calculating nodes that have weight that is equal or greater as there is no way they will have a solution to the shortest path, you need to take into account the removable wall... but this could potentially save you a lot of time especially in big mazes.__
 
 So from our diagram let us write the weights in the nodes from `A` to all the nodes:
 
 ![Graph](./assets/graphweight.png "Graph after weight")
 
-So we found the shortest path from `A` to `Q` but we know that we could remove a wall, and removing a wall could potentially get us a shorter path. So let us calculate paths from __all walls to the end to see if they have a shorter distance to the end__.
+So we found the shortest path from `A` to `Q` but we know that we could remove a wall, and removing a wall could potentially get us a shorter path. So let us calculate paths from _all walls to the `exit node` to see if they have a shorter distance to `exit node`_.
 
-But let us _keep_ the weight we already have calculated __in the first weight calculation__ and subtract `999` to counter the wall traversal cost to that node. Then if that weight is less than our current lowest path (which is `1005`) then replace that as the new lowest path. Only bother doing this calculation if the `start weight < current lowest`.
+But let us __keep__ the weight we already have calculated __in the first weight calculation__ and subtract `999` to _undo_ the wall traversal cost to that node. Then if that weight is less than our current lowest path (which is `1005`) then replace that as the new lowest path. Only bother doing this calculation if the `start weight < current lowest`.
 
 For example calculating one wall (starting from yellow and `-999`):
 
@@ -95,11 +95,11 @@ In summary the steps to get this solution is:
 
 * Convert the `int[][]` into this node graph and create connections to empty tiles `1` and connections to walls extremely high `MAX_INT`.
 
-* Once you have created the graph calculate the shortest path from the start to the end. (Remember that the start is weight 1 by default according to the spec)
+* Once you have created the graph calculate the shortest path from the start to the exit. (Remember that the start is weight 1 by default according to the spec)
 
 * Once you have calculated the shortest path from `start` to `exit` then calculate shortest paths for each wall and replace the `current_shortest` if the new one calculated is better. (Remember always use the weight you calculated for them in the __FIRST__ calculation but subtract `MAX_INT + 1`)
 
-* After exhausting all our options we will _definitely_ have the shortest solution.
+* After exhausting all our options (calculating for EVERY wall node) we will _definitely_ have the shortest solution, and simply return the weight.
 
 Some tips:
 
