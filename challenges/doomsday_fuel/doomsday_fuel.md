@@ -58,7 +58,7 @@ Output:
 
 ### Understanding
 
-This challenge may take a couple of read throughs to understand what is actually going on and what is asked of us. Simply put the aim of your program is to output the chances of ending up in a terminal state from starting at state `s0`. Adding up the numbers in a given `int[]` provides us with a denominator which we can then start to create the probability of which state the 'ore' will change into next.
+This challenge may take a couple of reads to understand what is actually going on and what is asked of us. Simply put the aim of your program is to output the chances of ending up in a terminal state from starting at state `s0`. Adding up the numbers in a given `int[]` provides us with a denominator which we can then start to create the probability of which state the 'ore' will change into next.
 
 This is what is happening in a visual diagram using the example used in the specification:
 
