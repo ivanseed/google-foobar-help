@@ -17,4 +17,4 @@ Here are some challenges that I came across as well as an explanation on how I s
 * [bomb_baby](./challenges/bomb_baby/bomb_baby.md)
 * [doomsday_fuel](./challenges/doomsday_fuel/doomsday_fuel.md)
 * [prepare_the_bunnies_escape](./challenges/prepare_the_bunnies_escape/prepare_the_bunnies_escape.md)
-* [queue_to_do]()
+* [patrolling_guards (salute counting)](./challenges/patrol_salutes/patrol_salutes.md)
