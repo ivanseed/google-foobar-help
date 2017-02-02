@@ -69,7 +69,7 @@ Well.. that is fairly easy, we have a solution already - we know that if we do n
 
 But... It is pretty slow. The specification mentions that the inputs can be up to 10^50 in size. Now imagine if we had the inputs `F = 1` and `M = 10^50` we would have to do our calculation 10^50 - 1 times, and who knows how long you will be waiting for that to compute.
 
-This problem occurs when `F | M` is larger by several multiples than its counterpart. So how about we see how many times `F | M` fits into `M | F`, then we increase the counter for how many times it be divided into the other one.
+This problem occurs when `F | M` is larger by several multiples than its counterpart. So how about we see how many times `F | M` fits into `M | F`, then we increase the counter for how many times it can be divided into the other one.
 
 For example:
 ```
