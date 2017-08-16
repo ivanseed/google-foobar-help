@@ -1,23 +1,34 @@
-# Patrol Salutes
-_I have lost the specification for this challenge (and the right name) but I have tried my best to recall everything._
+# En Route Salute
+
 ### The challenge specification
-In the LAMBCHOP Organization there is a rule that all guards who walk past each other must stop and salute, before continuing in their direction. Commander Lambda would like you to provide a solution that will count the number of exchanged salutes between the guards. Guards move left and right, and when two guards pass an exchange of salutes will happen, and the continue.
+Commander Lambda loves efficiency and hates anything that wastes time. She's a busy lamb, after all! She generously rewards henchmen who identify sources of inefficiency and come up with ways to remove them. You've spotted one such source, and you think solving it will help you build the reputation you need to get promoted.
 
-Write a program that counts how many salutes are exchanged during a typical walk along a hallway. The hall is represented by a string.
+Every time the Commander's employees pass each other in the hall, each of them must stop and salute each other - one at a time - before resuming their path. A salute is five seconds long, so each exchange of salutes takes a full ten seconds (Commander Lambda's salute is a bit, er, involved). You think that by removing the salute requirement, you could save several collective hours of employee time per day. But first, you need to show her how bad the problem really is.
 
-`>` - Represents a guard traveling `left to right`.
+Write a program that counts how many salutes are exchanged during a typical walk along a hallway. The hall is represented by a string. For example:
+"--->-><-><-->-"
 
-`<` - Represents a guard traveling `right to left`.
+Each hallway string will contain three different types of characters: '>', an employee walking to the right; '<', an employee walking to the left; and '-', an empty space. Every employee walks at the same speed either to right or to the left, according to their direction. Whenever two employees cross, each of them salutes the other. They then continue walking until they reach the end, finally leaving the hallway. In the above example, they salute 10 times.
 
-`-` - Represents no guard on this tile.
-
-For example:
-
-`"--->-><-><-->-"`
-
-Here we have 4 guards traveling right and two guards traveling left and in total there will be `5` exchanged salutes.
+Write a function answer(s) which takes a string representing employees walking along a hallway and returns the number of times the employees will salute. s will contain at least 1 and at most 100 characters, each one of -, >, or <.
 
 ### Test cases
+
+Input:
+
+`">----<"`
+
+Output:
+
+`2`
+
+Input:
+
+`"<<>><"`
+
+Output:
+
+`4`
 
 Input:
 
