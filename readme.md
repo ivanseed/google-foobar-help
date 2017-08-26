@@ -18,3 +18,4 @@ Here are some challenges that I came across as well as an explanation on how I s
 * [doomsday_fuel](./challenges/doomsday_fuel/doomsday_fuel.md)
 * [prepare_the_bunnies_escape](./challenges/prepare_the_bunnies_escape/prepare_the_bunnies_escape.md)
 * [en_route_salute](./challenges/en_route_salute/en_route_salute.md)
+* [ion_flux_relabeling](./challenges/ion_flux_relabeling/ion_flux_relabeling.md)
