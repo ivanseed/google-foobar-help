@@ -1,4 +1,3 @@
-# foobar:~/dodge-the-lasers priyanshu.nch$ cat readme.txt 
 # Dodge the Lasers!
 # =================
 
