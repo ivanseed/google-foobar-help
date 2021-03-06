@@ -1,5 +1,6 @@
 # bomb_baby
 ### The challenge specification
+```
 You're so close to destroying the LAMBCHOP doomsday device you can taste it! But in order to do so, you need to deploy special self-replicating bombs designed for you by the brightest scientists on Bunny Planet. There are two types: Mach bombs (M) and Facula bombs (F). The bombs, once released into the LAMBCHOP's inner workings, will automatically deploy to all the strategic points you've identified and destroy them at the same time.
 
 But there's a few catches. First, the bombs self-replicate via one of two distinct processes:
@@ -13,7 +14,7 @@ Second, you need to ensure that you have exactly the right number of Mach and Fa
 And finally, you were only able to smuggle one of each type of bomb - one Mach, one Facula - aboard the ship when you arrived, so that's all you have to start with. (Thus it may be impossible to deploy the bombs to destroy the LAMBCHOP, but that's not going to stop you from trying!)
 
 You need to know how many replication cycles (generations) it will take to generate the correct amount of bombs to destroy the LAMBCHOP. Write a function answer(M, F) where M and F are the number of Mach and Facula bombs needed. Return the fewest number of generations (as a string) that need to pass before you'll have the exact number of bombs necessary to destroy the LAMBCHOP, or the string "impossible" if this can't be done! M and F will be string representations of positive integers no larger than 10^50. For example, if M = "2" and F = "1", one generation would need to pass, so the answer would be "1". However, if M = "2" and F = "4", it would not be possible.
-
+```
 
 #### Test cases
 Inputs:
@@ -37,18 +38,20 @@ Output:
 
 ### Understanding
 
-I guess the best way to describe the problem is to imagine yourself starting with two numbers `F` and `M`, both of which have the value of `1`. At the start you are currently in `step 0`, to progress a step you must either;
+The best way to describe the problem is to imagine yourself starting with two numbers `F` and `M`, both starting with the value of `1`.
+
+At the start you are currently in `step 0`, and to progress to the next step you have to:
 
 * Add the value of `F` onto `M` to calculate a new `M`, _or_,
 * Add the value of `M` onto `F` to calculate a new `F`.
 
-Because of the rules of the specification we can create some facts:
+Because of this we can determine:
 
 * Because of the steps, `F` can never equal `M` if `step n` > `0`.
 * If `F` > `M` we know that the last step to take place involved adding `M` to `F`.
 * If `M` > `F` we know that the last step to take place involved adding `F` to `M`.
 
-### A Solution
+### Solution
 
 One sure way to solve this challenge is to reverse engineer the two numbers they provide. From the rules to get from `step n` to `step n-1` we just do `F` = `F` - `M` or `M` = `M` - `F` depending if `F` or `M` is larger than the other.
 
