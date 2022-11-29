@@ -36,7 +36,7 @@ Input:
 
 Output:
 
-`5`
+`10`
 
 Input:
 
@@ -44,7 +44,7 @@ Input:
 
 Output:
 
-`1`
+`2`
 
 Input:
 
@@ -52,7 +52,7 @@ Input:
 
 Output:
 
-`10`
+`20`
 
 ### Understanding
 This is quite a simple challenge and can be done in several ways. Basically choose whether to start on the _left_ of the string or the _right_ of the string.
