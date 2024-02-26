@@ -116,3 +116,7 @@ Some tips:
 * Stop when your multiplier is 0, don't bother checking the rest of the string.
 
 Bit hard to explain but I hope the solution got its way across, again sorry for losing the specification, if you have it feel free to edit this .md and include it.
+
+tried compiling an easy python solution in O(n) for this problem. 
+Have a look and if you like it, Subscribe
+https://youtu.be/IX6nQi7aHMo
